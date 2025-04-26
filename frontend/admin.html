@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>ilydanyxx - Адмін-панель</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>ilydanyxx</h1>
+        <nav>
+            <a href="index.html">Головна</a>
+            <a href="login.html" onclick="logout()">Вихід</a>
+        </nav>
+    </header>
+    <div class="container">
+        <form onsubmit="addProduct(event)">
+            <h2>Додати монету</h2>
+            <input type="text" id="title" placeholder="Назва" required>
+            <input type="text" id="description" placeholder="Опис" required>
+            <input type="number" id="price" placeholder="Ціна" required>
+            <input type="text" id="imageUrl" placeholder="Посилання на зображення" required>
+            <button type="submit">Додати</button>
+        </form>
+    </div>
+</body>
+</html>
