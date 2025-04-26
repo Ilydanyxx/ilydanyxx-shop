@@ -20,15 +20,10 @@ app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
-.then(() => {
-    console.log('Connected to MongoDB');
-    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-})
-.catch((error) => {
-    console.error('MongoDB connection error:', error);
-    process.exit(1); // Якщо немає підключення до бази — вихід з процесу
-});
+mongoose.connect(process.env.MONGO_URI)
+    .then(() => {
+        console.log('MongoDB connected');
+        app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+    })
+    .catch(err => console.log('MongoDB connection error:', err));
+
